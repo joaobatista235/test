@@ -1,13 +1,8 @@
 const venom = require('venom-bot');
+const venomOptions = require('./venom-options.js');
 
 venom
-  .create({
-    session: 'session-name',
-    catchQR: (qrCode) => {
-      console.log('QR Code gerado: ', qrCode);
-    },
-    logQR: false
-  })
+  .create(venomOptions)
   .then((client) => start(client))
   .catch((erro) => {
     console.log(erro);
